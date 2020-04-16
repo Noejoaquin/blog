@@ -21,6 +21,8 @@ const Layout = ({data}) => {
   )
 }
 
+// this query pulls all the nodes that we have and will pass it into
+// component as props!
 export const query = graphql`
   query HomepageQuery {
     allMarkdownRemark(
