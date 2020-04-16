@@ -1,5 +1,5 @@
 ---
-path: '/programming'
+path: '/programming/vim/fuzzy_search_without_plugins'
 date: '2020-04-16'
 title: "Vim Search Without plugins"
 tags: ["Vim", "search", "path"]
