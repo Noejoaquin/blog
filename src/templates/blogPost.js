@@ -1,7 +1,8 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
-const Template = ({data}) => {
+const Template = ({data, pageContext}) => {
+  const { prev, next } = pageContext;
   const { markdownRemark } = data;
   const { title } = markdownRemark.frontmatter
   const { html } = markdownRemark
@@ -12,6 +13,18 @@ const Template = ({data}) => {
         className="blogPost"
         dangerouslySetInnerHTML={{__html: html}}
       />
+
+      { next &&
+        <Link to={next.node.frontmatter.path}>
+          Next
+        </Link>
+      }
+
+      { prev &&
+        <Link to={prev.node.frontmatter.path}>
+          Prev
+        </Link>
+      }
     </div>
   )
 }
